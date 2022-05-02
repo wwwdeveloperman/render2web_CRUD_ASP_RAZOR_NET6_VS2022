@@ -1,19 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CRUDNET6RAZORVS2022.Modelos;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUDNET6RAZORVS2022.Datos
 {   
-    // EntitiFrameworkCore -> DbContext
+
+
+    // EntitiFrameworkCore -> DbContext -------------------
     public class DB : DbContext 
     {
         public DB(DbContextOptions<DB> opt ) : base(opt)
-        {
-            
-        }
+        { }
 
         // MODELOS
+        public DbSet<Curso> Curso { get; set; }
+
+    }// class DB ------------------------------------------
 
 
-
-
-    }// class DB
-}
+}// namespace

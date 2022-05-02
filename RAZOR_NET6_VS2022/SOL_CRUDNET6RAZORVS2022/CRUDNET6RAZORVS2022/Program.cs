@@ -1,6 +1,22 @@
 //
 // AGREGAR SERVICIOS :
+using CRUDNET6RAZORVS2022.Datos;
+using Microsoft.EntityFrameworkCore; // para options.UseSqlServer()
+// UseSqlServer() ->  instalar NuGets.
+
+//
+//
 var builder = WebApplication.CreateBuilder(args);
+
+// --------- Configurar conexion a SQL SERVER :
+builder.Services.AddDbContext<DB>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("str")));
+// -------------------------------------------------------------------
+
+
+
+
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
