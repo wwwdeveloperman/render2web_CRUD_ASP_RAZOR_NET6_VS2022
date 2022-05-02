@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "j9E3Ime/Fvd2LPWxT9YQsDAO5V4PG/d7tt7T5ydju9cVWGftiTmWqr9xYfrQnEi9Nbs/knjIvbXnA1j8rSYf7g==",
+  "dgSpecHash": "gLVofCqK77KbPbqRcMmNhFKyKY1yOQ6AsRfPaRMf0vSD4BfFnB0QlhvMnYrYRUeaKIgJ4JIs2FHoErxoFd8tzQ==",
   "success": true,
   "projectFilePath": "D:\\u\\informaatica1\\Dev\\.NETCore\\Render2Web\\ASP_RAZOR_NET6_VS2022\\RAZOR_NET6_VS2022\\SOL_CRUDNET6RAZORVS2022\\CRUDNET6RAZORVS2022\\CRUDNET6RAZORVS2022.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\bootstrap\\5.1.3\\bootstrap.5.1.3.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
