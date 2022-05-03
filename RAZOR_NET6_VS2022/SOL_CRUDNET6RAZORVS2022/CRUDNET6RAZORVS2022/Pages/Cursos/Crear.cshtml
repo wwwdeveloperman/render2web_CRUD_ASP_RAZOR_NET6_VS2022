@@ -1,0 +1,102 @@
+﻿@page
+@model CRUDNET6RAZORVS2022.Pages.Cursos.CrearModel
+@* comentarios *@
+
+@{
+    ViewData["Title"] = "Crear Curso";
+}
+
+<h5> Vea los cursos profesionales en <a href="https://render2web.com/cursos" > www.render2web.com/cursos </a> 
+</h5>
+
+<div class="card" >
+  
+  <div class="card-header">
+    <h2 class="text-info text-center">Creacion de cursos</h2>
+  </div>
+
+  <div class="card-body">
+
+    <form method="post">
+      <div asp-validation-summary = "ModelOnly" class="text-danger"></div>
+      <div class="container" style="padding:30px">
+        <div class="form-group">
+          
+          <!-- Campos : -->
+
+          <div class="row">
+              @* ver --> [BindProperty] en el .cs  *@
+              <div class="col-sm-3">
+                <label asp-for="Cursos.NombreCurso"></label>
+              </div>
+
+              <div class="col-sm-6">
+                <input asp-for="Cursos.NombreCurso" class="form-control" />
+              </div>
+              <span asp-validation-for="Cursos.NombreCurso" class="text-danger"></span>
+          </div>
+
+          <div class="row">
+              @* ver --> [BindProperty] en el .cs  *@
+              <div class="col-sm-3">
+                <label asp-for="Cursos.CantidadClases"></label>
+              </div>
+
+              <div class="col-sm-6">
+                <input asp-for="Cursos.CantidadClases" class="form-control" />
+              </div>
+              <span asp-validation-for="Cursos.CantidadClases" class="text-danger"></span>
+          </div>
+
+          <div class="row">
+              @* ver --> [BindProperty] en el .cs  *@
+              <div class="col-sm-3">
+                <label asp-for="Cursos.Precio"></label>
+              </div>
+
+              <div class="col-sm-6">
+                <input asp-for="Cursos.Precio" class="form-control" />
+              </div>
+              <span asp-validation-for="Cursos.Precio" class="text-danger"></span>
+          </div>
+
+          <br/>
+                    
+          <div class="row">
+              <!-- Boton  -->
+              <div class="col-sm-4">
+                <p></p> 
+              </div>
+
+              <div class="col-sm-2" offset-sm-2>
+                <input type="submit" value="Crear" class="btn btn-primary form-control" />
+              </div>
+              <div class="col-sm-2">
+                <a asp-page="Index" class="btn btn-success form-control">Volver a Lista</a>
+              </div>
+
+              <div class="col-sm-2" >
+                <p></p> 
+              </div>
+              <div class="col-sm-2" >
+                <p></p> 
+              </div>
+              
+          </div>
+
+
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+
+
+</div>
+
+
+
+
+@* //end *@

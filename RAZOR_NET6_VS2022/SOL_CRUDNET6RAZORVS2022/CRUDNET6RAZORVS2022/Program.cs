@@ -15,9 +15,6 @@ builder.Services.AddDbContext<DB>(options => options.UseSqlServer(
 
 
 
-
-
-
 // Add services to the container.
 builder.Services.AddRazorPages();
 
