@@ -20,10 +20,29 @@
 
     <form method="post">
       <div asp-validation-summary = "ModelOnly" class="text-danger"></div>
+
+
+      @* <!-- Se envia Campo oculto. --> *@
+      <input type="hidden" asp-for="Cursos.Id" />
+      @* ----------------------------------------- *@
+
+
       <div class="container" style="padding:30px">
         <div class="form-group">
           
           <!-- Campos : -->
+          <div class="row">
+              @* ver --> [BindProperty] en el .cs  *@
+              <div class="col-sm-3">
+                <label asp-for="Cursos.Id"></label>
+              </div>
+
+              <div class="col-sm-6">
+                <input asp-for="Cursos.Id" class="form-control" readonly/>
+              </div>
+              
+          </div>
+
 
           <div class="row">
               @* ver --> [BindProperty] en el .cs  *@
@@ -73,7 +92,7 @@
                 <input type="submit" value="Aceptar" class="btn btn-primary form-control" />
               </div>
               <div class="col-sm-2">
-                <a asp-page="Index" class="btn btn-success form-control">Volver a Lista</a>
+                <a asp-page="Index" class="btn btn-success form-control">Volver</a>
               </div>
 
               <div class="col-sm-2" >

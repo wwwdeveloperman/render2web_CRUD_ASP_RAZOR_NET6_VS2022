@@ -17,16 +17,13 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
         //----------------------------
         
         
-        // Obtener una lista de Cursos p usar en el html
+        // Obtener una lista de Cursos p usar en el html --
         public IEnumerable<Curso> Cursos { get; set; }
-        
         public async Task OnGet()
         {
-            Cursos = await _contexto.Curso.ToListAsync();
+            Cursos = await _contexto.Cursos.ToListAsync();
         }
-
-
-
+        // ------------------------------------------------
 
 
 

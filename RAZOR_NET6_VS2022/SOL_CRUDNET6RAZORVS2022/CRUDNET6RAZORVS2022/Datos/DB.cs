@@ -12,7 +12,7 @@ namespace CRUDNET6RAZORVS2022.Datos
         { }
 
         // MODELOS
-        public DbSet<Curso> Curso { get; set; }
+        public DbSet<Curso> Cursos { get; set; }
 
     }// class DB ------------------------------------------
 

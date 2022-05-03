@@ -27,10 +27,11 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
         }
 
         
-        // Comprobacion de validaciones.
+        
         public async Task<IActionResult> OnPost()
-        {
-            if(!ModelState.IsValid)
+        {   
+            // Comprobacion de validaciones.
+            if (!ModelState.IsValid)
             {
                 return Page();
             }

@@ -18,11 +18,13 @@
       </div>
 
       <div class="col-sm-6">
-        <a asp-page="Crear" class="btn btn-primary">Crear Nuevo Curso</a>
+        <a asp-page="/Cursos/Crear" class="btn btn-primary">Crear Nuevo Curso</a>
       </div>
 
     </div>
   </div>
+
+
 
   <div class="card-body">
 
@@ -31,40 +33,50 @@
 
         <br/> <br/>
         <table class="table table-striped border">
+         <thead>
+              <tr class="table-secondary">
+                <th> @Html.DisplayNameFor( m=>m.Cursos.First().Id)                </th>
+                <th> @Html.DisplayNameFor( m=>m.Cursos.First().NombreCurso)       </th>
+                <th> @Html.DisplayNameFor( m=>m.Cursos.First().CantidadClases)    </th>
+                <th> @Html.DisplayNameFor( m=>m.Cursos.First().Precio)            </th>
+                <th> @Html.DisplayNameFor( m=>m.Cursos.First().FechaCreacion )    </th>
+                <th> Acciones </th>
+              </tr>
+         </thead>
+         
+         <tbody>
+              @foreach( var item in Model.Cursos )
+              {
+                <tr>
+                    <td> @Html.DisplayFor( m => item.Id)                </td>
+                    <td> @Html.DisplayFor( m => item.NombreCurso)       </td>
+                    <td> @Html.DisplayFor( m => item.CantidadClases)    </td>
+                    <td> @Html.DisplayFor( m => item.Precio)            </td>
+                    <td> @Html.DisplayFor( m => item.FechaCreacion )    </td>
+                    <td>
 
-          <tr class="table-secondary">
-            <th> @Html.DisplayNameFor( m=>m.Cursos.First().Id)                </th>
-            <th> @Html.DisplayNameFor( m=>m.Cursos.First().NombreCurso)       </th>
-            <th> @Html.DisplayNameFor( m=>m.Cursos.First().CantidadClases)    </th>
-            <th> @Html.DisplayNameFor( m=>m.Cursos.First().Precio)            </th>
-            <th> @Html.DisplayNameFor( m=>m.Cursos.First().FechaCreacion )    </th>
-            <th> Acciones </th>
-          </tr>
+                      @*
+                      <a asp-route-id="@item.Id" asp-page="Editar" 
+                      class="btn btn-success btn-sm">Editar</a>    *@
 
-          @foreach( var item in Model.Cursos )
-          {
-            <tr>
-                <td> @Html.DisplayFor( m => item.Id)                </td>
-                <td> @Html.DisplayFor( m => item.NombreCurso)       </td>
-                <td> @Html.DisplayFor( m => item.CantidadClases)    </td>
-                <td> @Html.DisplayFor( m => item.Precio)            </td>
-                <td> @Html.DisplayFor( m => item.FechaCreacion )    </td>
-                <td>
+                      <a class="btn btn-success btn-sm"  asp-page="/Cursos/Editar" 
+                         asp-route-id="@item.Id"> Editar </a>
 
-                  <a asp-route-id="@item.Id" asp-page="Editar" 
-                  class="btn btn-success btn-sm">Editar</a>
+                      @* asp-route-id="@item.Id": al editar un record de la lista de cursos, 
+                          se envia el id del record a la pagina Edit para q lo buske.
+                      *@
 
-                  <button asp-page-handler="Borrar" asp-route-id="@item.Id"
-                   onclick="return confirm('Seguro de borrar ? ')"
-                   class="btn btn-danger btn sm"> 
-                    Borrar
-                   </button>
 
-                </td>
+                      <button asp-page-handler="Borrar" 
+                       asp-route-id="@item.Id"
+                       onclick="return confirm('Seguro de borrar ? ')"
+                       class="btn btn-danger btn sm"> Borrar </button>
 
-            </tr>          
-          }
+                    </td>
 
+                </tr>          
+              }
+         </tbody>
         </table>
 
       }else
