@@ -28,70 +28,72 @@
 
   <div class="card-body">
 
-    @*  SI HAY RECORDS  MOSTRARLOS  *@
+    <form method="post">
 
-    @if( Model.Cursos.Count() > 0 )
-      {
+        @*  SI HAY RECORDS  MOSTRARLOS  *@
+        @if( Model.Cursos.Count() > 0 )
+          {
 
-        <br/> <br/>
+            <br/> <br/>
 
-        <table class="table table-striped border">
+            <table class="table table-striped border">
 
-           <thead>
-              <tr class="table-secondary">
-                <th> @Html.DisplayNameFor( m=>m.Cursos.First().Id)                </th>
-                <th> @Html.DisplayNameFor( m=>m.Cursos.First().NombreCurso)       </th>
-                <th> @Html.DisplayNameFor( m=>m.Cursos.First().CantidadClases)    </th>
-                <th> @Html.DisplayNameFor( m=>m.Cursos.First().Precio)            </th>
-                <th> @Html.DisplayNameFor( m=>m.Cursos.First().FechaCreacion )    </th>
-                <th> Acciones </th>
-              </tr>
-           </thead>
+               <thead>
+                  <tr class="table-secondary">
+                    <th> @Html.DisplayNameFor( m=>m.Cursos.First().Id)                </th>
+                    <th> @Html.DisplayNameFor( m=>m.Cursos.First().NombreCurso)       </th>
+                    <th> @Html.DisplayNameFor( m=>m.Cursos.First().CantidadClases)    </th>
+                    <th> @Html.DisplayNameFor( m=>m.Cursos.First().Precio)            </th>
+                    <th> @Html.DisplayNameFor( m=>m.Cursos.First().FechaCreacion )    </th>
+                    <th> Acciones </th>
+                  </tr>
+               </thead>
          
 
-           <tbody>
+               <tbody>
 
-              @foreach( var item in Model.Cursos )
-              {
-                <tr>
-                    <td> @Html.DisplayFor( m => item.Id)                </td>
-                    <td> @Html.DisplayFor( m => item.NombreCurso)       </td>
-                    <td> @Html.DisplayFor( m => item.CantidadClases)    </td>
-                    <td> @Html.DisplayFor( m => item.Precio)            </td>
-                    <td> @Html.DisplayFor( m => item.FechaCreacion )    </td>
-                    <td>
+                  @foreach( var item in Model.Cursos )
+                  {
+                    <tr>
+                        <td> @Html.DisplayFor( m => item.Id)                </td>
+                        <td> @Html.DisplayFor( m => item.NombreCurso)       </td>
+                        <td> @Html.DisplayFor( m => item.CantidadClases)    </td>
+                        <td> @Html.DisplayFor( m => item.Precio)            </td>
+                        <td> @Html.DisplayFor( m => item.FechaCreacion )    </td>
+                        <td>
 
-                      @*
-                      <a asp-route-id="@item.Id" asp-page="Editar" 
-                      class="btn btn-success btn-sm">Editar</a>    *@
+                        @*-----------------------------------------------------------------------------*@
+                          <a class="btn btn-success btn-sm"  asp-page="/Cursos/Editar" 
+                             asp-route-id="@item.Id"> Editar </a>
 
-                      <a class="btn btn-success btn-sm"  asp-page="/Cursos/Editar" 
-                         asp-route-id="@item.Id"> Editar </a>
-
-                      @* asp-route-id="@item.Id": con click en editar un record de la lista de cursos, 
-                          se envia el id del record a la pagina Edit para q lo buske.
-                      *@
+                          @* asp-route-id="@item.Id": con click en editar un record de la lista de cursos, 
+                              se envia el id del record a la pagina Edit para q lo buske.
+                        -------------------------------------------------------------------------------*@
 
 
-                      <button asp-page-handler="Borrar" 
-                       asp-route-id="@item.Id"
-                       onclick="return confirm('Seguro de borrar ? ')"
-                       class="btn btn-danger btn sm"> Borrar </button>
+                          <button asp-page-handler="Borrar" 
+                           asp-route-id="@item.Id"
+                           onclick="return confirm('Seguro de borrar ? ')"
+                           class="btn btn-danger btn sm"> Borrar </button>
 
-                    </td>
+                        </td>
 
-                </tr>          
-              }
+                    </tr>          
+                  } // foreach
 
-           </tbody>
-        </table>
+               </tbody>
 
-      }else
-      {
 
-          <h5> No hay cursos disponibles.</h5>
+            </table>
+
+          }else
+          {
+
+              <h5> No hay cursos disponibles.</h5>
             
-      }
+          }// si hay registros
+
+    </form>
 
   </div>
 

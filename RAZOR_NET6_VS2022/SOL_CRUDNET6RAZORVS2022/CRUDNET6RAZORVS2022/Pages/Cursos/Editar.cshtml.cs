@@ -32,11 +32,14 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
 
 
         // ----------------------------------------------------------------
+        // Da error 
+        
         /*public async void OnGet(int id)
         {
             Cursos = await _contexto.Cursos.FindAsync(id);
         }*/
 
+        // Metodo Sincrono :
         public void OnGet(int id)
         {
             Cursos = _contexto.Cursos.Find(id);
