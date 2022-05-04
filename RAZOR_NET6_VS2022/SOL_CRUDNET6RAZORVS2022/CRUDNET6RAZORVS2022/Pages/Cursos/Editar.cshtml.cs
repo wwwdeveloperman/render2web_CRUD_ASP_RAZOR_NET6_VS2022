@@ -10,7 +10,10 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
 
 
         //----------------------------------
+        //1. DB CONTEXTO
         private readonly DB _contexto;
+        
+        //2. COSNTRUCTOR
         public EditarModel(DB contexto)
         {
             _contexto = contexto;
@@ -20,47 +23,56 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
 
 
         //----------------------------------
-        // crear una instancia:
+        // 3. crear una instancia:
         [BindProperty]
         // using app.Modelos
         public Curso Cursos { get; set; }
         //-----------------------------------
 
+
+
         // ----------------------------------------------------------------
-        public async void OnGet(int id)
+        /*public async void OnGet(int id)
         {
             Cursos = await _contexto.Cursos.FindAsync(id);
-        }
+        }*/
 
-        public async Task<IActionResult> OnPost(int id)
+        public void OnGet(int id)
+        {
+            Cursos = _contexto.Cursos.Find(id);
+        }
+        // ----------------------------------------------------------------
+
+
+
+
+        // ----------------------------------------------------------------
+        public async Task<IActionResult> OnPost()
         {
             // if form data is ok 
             if (ModelState.IsValid)
             {
-                // Cursos.Id
-                var vFoundDB = await _contexto.Cursos.FindAsync(id);
+                // FIND Cursos.Id
+                var vFoundDB = await _contexto.Cursos.FindAsync(Cursos.Id);
                 if(vFoundDB == null)
                 {
                     return NotFound();
                 }
-
-
-
+                // save:
                 vFoundDB.NombreCurso = Cursos.NombreCurso;
                 vFoundDB.CantidadClases = Cursos.CantidadClases;
                 vFoundDB.Precio = Cursos.Precio;
                 //
                 await _contexto.SaveChangesAsync();
-                //return RedirectToPage("Index");
+                return RedirectToPage("Index");
             }
             
-            return RedirectToPage("Index");
+            return RedirectToPage();
 
         }// OnPost()
         // ------------------------------------------------------------------
 
 
 
-
-    }
+    }// class EditarModel
 }

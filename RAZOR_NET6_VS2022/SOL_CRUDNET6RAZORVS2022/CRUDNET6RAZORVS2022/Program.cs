@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore; // para options.UseSqlServer()
 //
 var builder = WebApplication.CreateBuilder(args);
 
-// --------- Configurar conexion a SQL SERVER :
+// --------- Configurar conexion a SQL SERVER : ----------------------
 builder.Services.AddDbContext<DB>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("str")));
 // -------------------------------------------------------------------

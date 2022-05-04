@@ -9,7 +9,7 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
     public class IndexModel : PageModel
     {
         //----------------------------
-        private readonly  DB _contexto;
+        private readonly  DB   _contexto;
         public IndexModel(DB contexto)
         {
             _contexto = contexto;
@@ -21,7 +21,7 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
         public IEnumerable<Curso> Cursos { get; set; }
         public async Task OnGet()
         {
-            Cursos = await _contexto.Cursos.ToListAsync();
+            Cursos =  _contexto.Cursos.ToList();
         }
         // ------------------------------------------------
 

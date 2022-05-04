@@ -28,12 +28,16 @@
 
   <div class="card-body">
 
+    @*  SI HAY RECORDS  MOSTRARLOS  *@
+
     @if( Model.Cursos.Count() > 0 )
       {
 
         <br/> <br/>
+
         <table class="table table-striped border">
-         <thead>
+
+           <thead>
               <tr class="table-secondary">
                 <th> @Html.DisplayNameFor( m=>m.Cursos.First().Id)                </th>
                 <th> @Html.DisplayNameFor( m=>m.Cursos.First().NombreCurso)       </th>
@@ -42,9 +46,11 @@
                 <th> @Html.DisplayNameFor( m=>m.Cursos.First().FechaCreacion )    </th>
                 <th> Acciones </th>
               </tr>
-         </thead>
+           </thead>
          
-         <tbody>
+
+           <tbody>
+
               @foreach( var item in Model.Cursos )
               {
                 <tr>
@@ -62,7 +68,7 @@
                       <a class="btn btn-success btn-sm"  asp-page="/Cursos/Editar" 
                          asp-route-id="@item.Id"> Editar </a>
 
-                      @* asp-route-id="@item.Id": al editar un record de la lista de cursos, 
+                      @* asp-route-id="@item.Id": con click en editar un record de la lista de cursos, 
                           se envia el id del record a la pagina Edit para q lo buske.
                       *@
 
@@ -76,7 +82,8 @@
 
                 </tr>          
               }
-         </tbody>
+
+           </tbody>
         </table>
 
       }else

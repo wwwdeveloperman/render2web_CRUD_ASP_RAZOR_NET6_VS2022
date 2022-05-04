@@ -27,13 +27,6 @@ namespace CRUDNET6RAZORVS2022.Modelos
         [Display(Name = "Fecha de creacion")]
         public DateTime FechaCreacion { get; set; }
 
-
-        /**
-        [StringLength()]
-
-        [DataType(DataType.Password)]   
-        **/
-
     }
 
 

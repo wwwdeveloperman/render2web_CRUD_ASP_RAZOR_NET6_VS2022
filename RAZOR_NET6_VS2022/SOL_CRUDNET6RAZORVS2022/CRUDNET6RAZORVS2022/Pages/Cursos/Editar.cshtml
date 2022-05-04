@@ -13,7 +13,7 @@
 <div class="card" >
   
   <div class="card-header">
-    <h2 class="text-info text-center">Edicion de cursos</h2>
+    <h2 class="text-info text-center">Edicion de curso nro @Html.DisplayFor(m => m.Cursos.Id) </h2>
   </div>
 
   <div class="card-body">
@@ -22,15 +22,23 @@
       <div asp-validation-summary = "ModelOnly" class="text-danger"></div>
 
 
-      @* <!-- Se envia Campo oculto. --> *@
-      <input type="hidden" asp-for="Cursos.Id" />
-      @* ----------------------------------------- *@
+
+      @* ***************** Enviar campo hacia Editar.cshtml.cs *************
+      <input type="hidden"     asp-for="ContactoVM.Contactos.Id" />  <--  de Agenda
+      *@
+
+      <input type="hidden"     asp-for="Cursos.Id" />
+      @* ------------------------------------------------------------------------ *@
+
+
 
 
       <div class="container" style="padding:30px">
         <div class="form-group">
           
           <!-- Campos : -->
+
+          <!-------------  Campo Id ------------------------------------->
           <div class="row">
               @* ver --> [BindProperty] en el .cs  *@
               <div class="col-sm-3">
@@ -42,8 +50,10 @@
               </div>
               
           </div>
+          <! --------------------------------------------------------- -->
 
-
+          
+          <!-------------  Campo NombreCurso----------------------------->
           <div class="row">
               @* ver --> [BindProperty] en el .cs  *@
               <div class="col-sm-3">
@@ -55,6 +65,10 @@
               </div>
               <span asp-validation-for="Cursos.NombreCurso" class="text-danger"></span>
           </div>
+          <! --------------------------------------------------------- -->
+
+
+          <!-------------  Campo CantidadClases ------------------------------------------->
 
           <div class="row">
               @* ver --> [BindProperty] en el .cs  *@
@@ -67,7 +81,10 @@
               </div>
               <span asp-validation-for="Cursos.CantidadClases" class="text-danger"></span>
           </div>
+          <! --------------------------------------------------------------------------- -->
 
+
+          <!-------------  Campo Precio --- ------------------------------------->
           <div class="row">
               @* ver --> [BindProperty] en el .cs  *@
               <div class="col-sm-3">
@@ -79,10 +96,16 @@
               </div>
               <span asp-validation-for="Cursos.Precio" class="text-danger"></span>
           </div>
+          <! -------------------------------------------------------------------- -->
+
+          
+
 
           <br/>
-                    
+          
+          <!-- --------------------------- Botones ------------------------------------------>
           <div class="row">
+
               <!-- Boton  -->
               <div class="col-sm-4">
                 <p></p> 
@@ -103,6 +126,7 @@
               </div>
               
           </div>
+          <!-- ------------------------------------------------------------------------------->
 
 
 

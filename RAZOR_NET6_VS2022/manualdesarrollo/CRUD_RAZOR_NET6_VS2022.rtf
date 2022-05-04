@@ -1,5 +1,5 @@
 {\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Consolas;}{\f1\fnil Cascadia Mono;}{\f2\fnil\fcharset0 Cascadia Mono;}{\f3\fnil\fcharset0 Calibri;}}
-{\colortbl ;\red255\green0\blue0;\red0\green128\blue0;\red0\green0\blue0;\red0\green0\blue255;\red43\green145\blue175;\red163\green21\blue21;\red128\green0\blue0;\red128\green0\blue128;\red75\green172\blue198;\red0\green100\blue0;}
+{\colortbl ;\red255\green0\blue0;\red0\green128\blue0;\red0\green0\blue0;\red0\green0\blue255;\red43\green145\blue175;\red163\green21\blue21;\red128\green0\blue0;\red128\green0\blue128;\red75\green172\blue198;}
 {\*\generator Riched20 10.0.19041}\viewkind4\uc1 
 \pard\sa200\sl240\slmult1\qc\b\f0\fs22\lang9 CRUD RAZOR .NET 6 VS2022\b0\par
 
@@ -247,171 +247,33 @@ Pages/Index.cshtml.cs:\par
 \ul\b VIDEO 7  Min 41.20\b0 .  OPCION "CREAR UN CURSO".\ulnone\par
 \par
 * Pages/Cursos, Add, "Razor Pages", empty,  nombre -> "Crear"\par
-\par
 // --------------------------------------------------------------------------------\par
 crear.cshtml:\par
-\cf3\f1\fs19 @page\par
-@model CRUDNET6RAZORVS2022.Pages.Cursos.\cf5 CrearModel\cf3\par
-@*\cf10  comentarios \cf3 *@\par
 \par
-@\{\par
-    ViewData[\cf6 "Title"\cf3 ] = \cf6 "Crear Curso"\cf3 ;\par
-\}\par
-\par
-\cf4 <\cf7 h5\cf4 >\cf3  Vea los cursos profesionales en \cf4 <\cf7 a\cf3  \cf1 href\cf4 ="https://render2web.com/cursos"\cf3  \cf4 >\cf3  {{\field{\*\fldinst{HYPERLINK www.render2web.com/cursos }}{\fldrslt{www.render2web.com/cursos\ul0\cf0}}}}\f1\fs19  \cf4 </\cf7 a\cf4 >\cf3  \par
-\cf4 </\cf7 h5\cf4 >\cf3\par
-\par
-\cf4 <\cf7 div\cf3  \cf1 class\cf4 ="card"\cf3  \cf4 >\cf3\par
-  \par
-  \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="card-header">\cf3\par
-    \cf4 <\cf7 h2\cf3  \cf1 class\cf4 ="text-info text-center">\cf3 Creacion de cursos\cf4 </\cf7 h2\cf4 >\cf3\par
-  \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-  \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="card-body">\cf3\par
-\par
-    \cf4 <\cf8\b form\cf3\b0  \cf1 method\cf4 ="post">\cf3\par
-      \cf4 <\cf8\b div\cf3\b0  \cf8\b asp-validation-summary\cf3\b0  \cf4 = "\cf3 ModelOnly\cf4 "\cf3  \cf1 class\cf4 ="text-danger"></\cf8\b div\cf4\b0 >\cf3\par
-      \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="container"\cf3  \cf1 style\cf4 ="padding:30px">\cf3\par
-        \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="form-group">\cf3\par
-          \par
-          \cf10 <!-- Campos : -->\cf3\par
-\par
-          \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="row">\cf3\par
-              @*\cf10  ver --> [BindProperty] en el .cs  \cf3 *@\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-3">\cf3\par
-                \cf4 <\cf8\b label\cf3\b0  \cf8\b asp-for\cf4\b0 ="\cf3 Cursos.NombreCurso\cf4 "></\cf8\b label\cf4\b0 >\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-6">\cf3\par
-                \cf4 <\cf8\b input\cf3\b0  \cf8\b asp-for\cf4\b0 ="\cf3 Cursos.NombreCurso\cf4 "\cf3  \cf1 class\cf4 ="form-control"\cf3  \cf4 />\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-              \cf4 <\cf8\b span\cf3\b0  \cf8\b asp-validation-for\cf4\b0 ="\cf3 Cursos.NombreCurso\cf4 "\cf3  \cf1 class\cf4 ="text-danger"></\cf8\b span\cf4\b0 >\cf3\par
-          \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-          \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="row">\cf3\par
-              @*\cf10  ver --> [BindProperty] en el .cs  \cf3 *@\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-3">\cf3\par
-                \cf4 <\cf8\b label\cf3\b0  \cf8\b asp-for\cf4\b0 ="\cf3 Cursos.CantidadClases\cf4 "></\cf8\b label\cf4\b0 >\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-6">\cf3\par
-                \cf4 <\cf8\b input\cf3\b0  \cf8\b asp-for\cf4\b0 ="\cf3 Cursos.CantidadClases\cf4 "\cf3  \cf1 class\cf4 ="form-control"\cf3  \cf4 />\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-              \cf4 <\cf8\b span\cf3\b0  \cf8\b asp-validation-for\cf4\b0 ="\cf3 Cursos.CantidadClases\cf4 "\cf3  \cf1 class\cf4 ="text-danger"></\cf8\b span\cf4\b0 >\cf3\par
-          \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-          \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="row">\cf3\par
-              @*\cf10  ver --> [BindProperty] en el .cs  \cf3 *@\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-3">\cf3\par
-                \cf4 <\cf8\b label\cf3\b0  \cf8\b asp-for\cf4\b0 ="\cf3 Cursos.Precio\cf4 "></\cf8\b label\cf4\b0 >\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-6">\cf3\par
-                \cf4 <\cf8\b input\cf3\b0  \cf8\b asp-for\cf4\b0 ="\cf3 Cursos.Precio\cf4 "\cf3  \cf1 class\cf4 ="form-control"\cf3  \cf4 />\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-              \cf4 <\cf8\b span\cf3\b0  \cf8\b asp-validation-for\cf4\b0 ="\cf3 Cursos.Precio\cf4 "\cf3  \cf1 class\cf4 ="text-danger"></\cf8\b span\cf4\b0 >\cf3\par
-          \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-          \cf4 <\cf7 br\cf4 />\cf3\par
-                    \par
-          \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="row">\cf3\par
-              \cf10 <!-- Boton  -->\cf3\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-4">\cf3\par
-                \cf4 <\cf7 p\cf4 ></\cf7 p\cf4 >\cf3  \par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-2"\cf3  \cf1 offset-sm-2\cf4 >\cf3\par
-                \cf4 <\cf7 input\cf3  \cf1 type\cf4 ="submit"\cf3  \cf1 value\cf4 ="Crear"\cf3  \cf1 class\cf4 ="btn btn-primary form-control"\cf3  \cf4 />\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-2">\cf3\par
-                \cf4 <\cf8\b a\cf3\b0  \cf8\b asp-page\cf4\b0 ="Index"\cf3  \cf1 class\cf4 ="btn btn-success form-control">\cf3 Volver a Lista\cf4 </\cf8\b a\cf4\b0 >\cf3\par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-2"\cf3  \cf4 >\cf3\par
-                \cf4 <\cf7 p\cf4 ></\cf7 p\cf4 >\cf3  \par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-              \cf4 <\cf7 div\cf3  \cf1 class\cf4 ="col-sm-2"\cf3  \cf4 >\cf3\par
-                \cf4 <\cf7 p\cf4 ></\cf7 p\cf4 >\cf3  \par
-              \cf4 </\cf7 div\cf4 >\cf3\par
-              \par
-          \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-        \cf4 </\cf7 div\cf4 >\cf3\par
-      \cf4 </\cf7 div\cf4 >\cf3\par
-    \cf4 </\cf8\b form\cf4\b0 >\cf3\par
-\par
-  \cf4 </\cf7 div\cf4 >\cf3\par
-\par
-\cf4 </\cf7 div\cf4 >\cf3\par
-@*\cf10  //end \cf3 *@\cf0\f0\fs22\par
 // --------------------------------------------------------------------------------\par
 \par
 \par
 \par
 // --------------------------------------------------------------------------------\par
 crear.cshtml.cs:\par
-\cf4\f1\fs19 using\cf3  CRUDNET6RAZORVS2022.Datos;\par
-\cf4 using\cf3  CRUDNET6RAZORVS2022.Modelos;\par
-\cf4 using\cf3  Microsoft.AspNetCore.Mvc;\par
-\cf4 using\cf3  Microsoft.AspNetCore.Mvc.RazorPages;\par
-\par
-\cf4 namespace\cf3  CRUDNET6RAZORVS2022.Pages.Cursos\par
-\{\par
-    \cf4 public\cf3  \cf4 class\cf3  \cf5 CrearModel\cf3  : PageModel\par
-    \{\par
-        \cf2 //----------------------------\cf3\par
-        \cf4 private\cf3  \cf4 readonly\cf3  DB _contexto;\par
-        \cf4 public\cf3  \cf5 CrearModel\cf3 (DB contexto)\par
-        \{\par
-            _contexto = contexto;\par
-        \}\par
-        \cf2 //----------------------------\cf3\par
-\par
-        \cf2 // crear una instancia:\cf3\par
-        [BindProperty]\par
-        \cf2 // using app.Modelos\cf3\par
-        \cf4 public\cf3  Curso Cursos \{ \cf4 get\cf3 ; \cf4 set\cf3 ; \}\par
-        \cf2 // <label asp-for="Cursos.NombreCurso"></label> <--  en el .cshtml\cf3\par
-\par
-\par
-        \cf4 public\cf3  \cf4 void\cf3  OnGet()\par
-        \{\par
-        \}\par
-\par
-        \par
-        \cf2 // Comprobacion de validaciones.\cf3\par
-        \cf4 public\cf3  \cf4 async\cf3  Task<IActionResult> OnPost()\par
-        \{\par
-            \cf4 if\cf3 (!ModelState.IsValid)\par
-            \{\par
-                \cf4 return\cf3  Page();\par
-            \}\par
-            \cf2 //\cf3\par
-            Cursos.FechaCreacion = DateTime.Now;\par
-            _contexto.Add(Cursos);\par
-            \cf4 await\cf3  _contexto.SaveChangesAsync();\par
-            \cf4 return\cf3  RedirectToPage(\cf6 "Index"\cf3 );\par
-\par
-        \}\cf2 //\cf3\par
-\par
-\par
-    \}\cf2 //class CrearModel\cf3\par
-\}\par
-\cf0\f0\fs22 // --------------------------------------------------------------------------------\par
+// --------------------------------------------------------------------------------\par
 \par
 // --------------------------------------------------------------------------------\par
 \par
 // --------------------------------------------------------------------------------\par
 \par
+// ================================================================================\par
 \par
 \par
 \par
 \par
 \par
 // ================================================================================\par
+VIDEO 8.   Min. 1.01.55 BORRAR.\par
 \par
 \par
 \par
+// ================================================================================\par
 \par
 \par
 end.\f3\par
