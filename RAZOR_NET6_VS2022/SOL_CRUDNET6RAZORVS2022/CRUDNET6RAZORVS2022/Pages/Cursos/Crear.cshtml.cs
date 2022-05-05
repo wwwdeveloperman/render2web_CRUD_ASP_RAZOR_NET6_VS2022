@@ -22,6 +22,14 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
         // <label asp-for="Cursos.NombreCurso"></label> <--  en el .cshtml
 
 
+
+        // ----------------------------------------------------------------
+        [TempData]
+        public string Mensaje { get; set; }
+        // ----------------------------------------------------------------
+
+
+
         public void OnGet()
         {
         }
@@ -35,10 +43,15 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
             {
                 return Page();
             }
-            //
+            
+            // CREAR RECORD:
             Cursos.FechaCreacion = DateTime.Now;
             _contexto.Add(Cursos);
             await _contexto.SaveChangesAsync();
+
+            // DISPLAY MENSAJE:
+            Mensaje = "Curso creado correctamente.";
+
             return RedirectToPage("Index");
 
         }//

@@ -32,12 +32,22 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
 
 
         // ----------------------------------------------------------------
+        [TempData]
+        public string Mensaje { get; set; }
+        // ----------------------------------------------------------------
+
+
+
+
+        // ----------------------------------------------------------------
         // Da error 
-        
+
         /*public async void OnGet(int id)
         {
             Cursos = await _contexto.Cursos.FindAsync(id);
         }*/
+
+
 
         // Metodo Sincrono :
         public void OnGet(int id)
@@ -65,10 +75,14 @@ namespace CRUDNET6RAZORVS2022.Pages.Cursos
                 vFoundDB.NombreCurso = Cursos.NombreCurso;
                 vFoundDB.CantidadClases = Cursos.CantidadClases;
                 vFoundDB.Precio = Cursos.Precio;
-                //
                 await _contexto.SaveChangesAsync();
+
+                // DISPLAY MENSAJE
+                Mensaje = "Registro editado correctamente."; 
+
                 return RedirectToPage("Index");
             }
+
             
             return RedirectToPage();
 

@@ -5,7 +5,7 @@ namespace CRUDNET6RAZORVS2022.Modelos
     public class Curso
     {
     
-        // prop tab, tab
+        // prop tab, tab  <-- short cut crear propiedades de clase.
         [Key] // using ...
         public int Id { get; set; }
         
